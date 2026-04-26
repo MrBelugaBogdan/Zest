@@ -1,0 +1,60 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #1e1e1e;
+    color: white;
+    overflow: hidden;
+}
+
+header {
+    height: 50px;
+    background: #2d2d2d;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    border-bottom: 2px solid #444;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffcc00;
+}
+
+.run-btn {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.run-btn:hover {
+    background: #45a049;
+}
+
+main {
+    display: flex;
+    height: calc(100vh - 50px);
+}
+
+#blocklyDiv {
+    flex: 2;
+    height: 100%;
+}
+
+#outputConsole {
+    flex: 1;
+    background: #121212;
+    padding: 15px;
+    border-left: 2px solid #444;
+    overflow-y: auto;
+}
+
+#log {
+    font-family: 'Courier New', Courier, monospace;
+    color: #00ff00;
+}
