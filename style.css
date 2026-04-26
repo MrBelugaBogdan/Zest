@@ -1,60 +1,100 @@
-body {
+/* Основні налаштування */
+body, html {
     margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #1e1e1e;
-    color: white;
+    padding: 0;
+    height: 100%;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: #e9eef2;
     overflow: hidden;
 }
 
 header {
-    height: 50px;
-    background: #2d2d2d;
+    background-color: #4d97ff;
+    color: white;
+    padding: 10px 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 20px;
-    border-bottom: 2px solid #444;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-.logo {
-    font-size: 24px;
-    font-weight: bold;
-    color: #ffcc00;
-}
+.logo { font-weight: bold; font-size: 22px; }
 
 .run-btn {
-    background: #4CAF50;
-    color: white;
+    background: #4caf50;
     border: none;
-    padding: 8px 20px;
-    border-radius: 5px;
-    cursor: pointer;
+    color: white;
+    padding: 8px 25px;
+    border-radius: 20px;
     font-weight: bold;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.2s;
 }
 
-.run-btn:hover {
-    background: #45a049;
-}
+.run-btn:hover { background: #3e8e41; transform: scale(1.05); }
 
-main {
+/* Контейнер редактора */
+.editor-container {
     display: flex;
-    height: calc(100vh - 50px);
+    height: calc(100vh - 60px);
 }
 
-#blocklyDiv {
-    flex: 2;
-    height: 100%;
+/* Сцена (Stage) */
+.stage-area {
+    width: 480px;
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    border-right: 2px solid #ddd;
 }
 
-#outputConsole {
+#stage {
+    width: 480px;
+    height: 360px;
+    position: relative;
+    background: white;
+    border-bottom: 1px solid #ccc;
+    overflow: hidden;
+}
+
+.sprite {
+    position: absolute;
+    width: 80px;
+    cursor: move;
+    transition: transform 0.1s; /* для плавних поворотів */
+}
+
+/* Панель спрайтів */
+.sprite-management {
     flex: 1;
-    background: #121212;
-    padding: 15px;
-    border-left: 2px solid #444;
-    overflow-y: auto;
+    padding: 10px;
+    background: #f9f9f9;
 }
 
-#log {
-    font-family: 'Courier New', Courier, monospace;
-    color: #00ff00;
+.sprite-list {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.sprite-item {
+    width: 70px;
+    height: 70px;
+    background: white;
+    border: 2px solid #4d97ff;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+}
+
+.sprite-item img { width: 40px; }
+
+/* Blockly */
+#blocklyDiv {
+    flex: 1;
+    height: 100%;
 }
