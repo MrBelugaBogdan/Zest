@@ -2,40 +2,44 @@
 <html lang="uk">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zest Editor — Visual Coding</title>
+    <title>Zest — Sprite Editor</title>
     <script src="https://unpkg.com/blockly/blockly.min.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header>
-        <div class="logo">ZEST ⚡</div>
-        <button class="run-btn" onclick="runZest()">Запустити код</button>
+        <div class="logo">ZEST ⚡ <span style="font-size: 14px; color: #aaa;">Alpha</span></div>
+        <button class="run-btn" onclick="runZest()">Запустити 🚩</button>
     </header>
 
-    <main>
-        <div id="blocklyDiv"></div>
-
-        <div id="outputConsole">
-            <h3>Результат:</h3>
-            <div id="log"></div>
+    <div class="editor-container">
+        <div class="stage-area">
+            <div id="stage">
+                <img id="sprite1" src="https://scratch.mit.edu/static/assets/650058e37e9652a225381e053f3f982a.svg" style="position: absolute; left: 100px; top: 100px; width: 80px;">
+            </div>
+            <div class="sprite-management">
+                <h4>Спрайти</h4>
+                <div class="sprite-list">
+                    <div class="sprite-item active">Кіт</div>
+                    <button class="add-sprite">+</button>
+                </div>
+            </div>
         </div>
-    </main>
+
+        <div id="blocklyDiv"></div>
+    </div>
 
     <xml id="toolbox" style="display: none">
-        <category name="Логіка" colour="#5b80a5">
-            <block type="controls_if"></block>
-            <block type="logic_compare"></block>
+        <category name="Рух" colour="#4C97FF">
+            <block type="move_steps"></block>
+            <block type="goto_xy"></block>
+            <block type="turn_right"></block>
         </category>
-        <category name="Цикли" colour="#5ba55b">
+        <category name="Керування" colour="#FFAB19">
             <block type="controls_repeat_ext"></block>
         </category>
-        <category name="Математика" colour="#5b67a5">
-            <block type="math_number"></block>
-            <block type="math_arithmetic"></block>
-        </category>
-        <category name="Текст" colour="#a55b80">
+        <category name="Вигляд" colour="#9966FF">
             <block type="text"></block>
             <block type="text_print"></block>
         </category>
